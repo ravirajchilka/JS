@@ -4,19 +4,17 @@ integers.*/
 
 function miniMaxSum(arr) {
     // Write your code here
-    let currentInd = 0;
     let values = [];
     let total = 0;
 
     for(let k=0;k<arr.length;k++) {
         for(let i=0;i<arr.length;i++) {
-            if(i!==currentInd) {
+            if(i!==k) {
                 total += arr[i];
             }
         }
         values.push(total);
         total = 0;
-        currentInd++;
     }
 
     console.log(Math.min(...values),Math.max(...values));
